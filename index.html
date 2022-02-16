@@ -15,7 +15,64 @@
 </head>
 
 <body>
-    <h1>My Wallet</h1>
+    <header>
+        <h1 class="text-center">My Wallet</h1>
+    </header>
+    <main>
+        <div class="row row-cols-1 row-cols-md-2 g-4 m-4">
+            <div class="col">
+                <div class="card">
+                    <img src="images/money.jpg" alt="">
+                </div>
+            </div>
+            <div class="col bg-light">
+                <div class="card border-0 bg-light">
+                    <div class="income">
+                        <h4 class="text-center">Income</h4>
+                        <div class="d-flex justify-content-end align-items-center p-2">
+                            <h6 class="me-2">Income: </h6>
+                            <input class="me-5" type="text">
+                        </div>
+                    </div>
+                    <div class="Expense">
+                        <h4 class="text-center">Expense</h4>
+                        <div class="d-flex justify-content-end align-items-center p-2">
+                            <h6 class="me-2">Rent: </h6>
+                            <input class="me-5" type="text">
+                        </div>
+                        <div class="d-flex justify-content-end align-items-center p-2">
+                            <h6 class="me-2">Food: </h6>
+                            <input class="me-5" type="text">
+                        </div>
+                        <div class="d-flex justify-content-end align-items-center p-2">
+                            <h6 class="me-2">Others: </h6>
+                            <input class="me-5" type="text">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary btn-sm px-5">Calculate</button>
+                    </div>
+
+                    <div class="text-center py-4">
+                        <h6>Total Expense: <span>00</span> </h6>
+                        <h6>Balance: <span>00</span> </h6>
+                    </div>
+
+                    <div class="saving d-flex px-2 align-items-center ">
+                        <h6>Saving: </h6>
+                        <input class="ms-2" type="text">
+                        <h6> % </h6>
+                        <button class="btn btn-primary btn-sm px-4">Save</button>
+                    </div>
+
+                    <div class="text-center py-4">
+                        <h6>Saving Amount: <span>00</span> </h6>
+                        <h6>Remaining Balance: <span>00</span> </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
     <!-- Bootstrap Bundle with Popper -->
