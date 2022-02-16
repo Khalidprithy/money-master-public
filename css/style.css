@@ -8,3 +8,20 @@ body {
         background-color: aliceblue;
     }
 }
+
+.notify {
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    background: #ff1111e7;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: none;
+}
+
+.error-message {
+    width: 25%;
+    margin: 0 auto;
+}
