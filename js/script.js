@@ -55,6 +55,7 @@ document.getElementById('calc-btn').addEventListener('click', function () {
     const totalExpanseOutput = document.getElementById('total-expense');
     const newTotalExpense = rentInputAmount + foodInputAmount + othersInputAmount;
     if (isNaN(newTotalExpense)) {
+        errorMessage3.style.display = 'none';
         errorMessage1.style.display = 'block';
     } else if (currentBalanceText > newTotalExpense) {
         const currentTotalExpense = parseFloat(totalExpanseOutput.innerText) + parseFloat(newTotalExpense);
@@ -65,6 +66,7 @@ document.getElementById('calc-btn').addEventListener('click', function () {
         errorMessage3.style.display = 'none';
     } else {
         errorMessage3.style.display = 'block';
+        errorMessage1.style.display = 'none';
     }
 
 });
