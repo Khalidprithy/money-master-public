@@ -22,6 +22,8 @@ document.getElementById('income-input').addEventListener('blur', function () {
     const currentIncomeInput = currentBalance();
     if (isNaN(currentIncomeInput)) {
         errorMessage1.style.display = 'block';
+        errorMessage2.style.display = 'none';
+
     } else if (currentIncomeInput > 0) {
         const currentBalance = document.getElementById('new-balance');
         currentBalance.innerText = currentIncomeInput;
