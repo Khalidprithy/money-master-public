@@ -4,8 +4,6 @@ function currentBalance() {
     return currentIncomeInput;
 }
 
-
-
 // getting expense function 
 
 function getExpenseValues(inputId) {
@@ -17,14 +15,22 @@ function getExpenseValues(inputId) {
 
 }
 
-document.getElementById('income-input').addEventListener('mouseleave', function () {
+document.getElementById('income-input').addEventListener('blur', function () {
+    const errorMessage1 = document.getElementById('wrong-input1');
+    const errorMessage2 = document.getElementById('wrong-input2');
     //update balance
     const currentIncomeInput = currentBalance();
-    if (currentIncomeInput > 0) {
+    if (isNaN(currentIncomeInput)) {
+        errorMessage1.style.display = 'block';
+    } else if (currentIncomeInput > 0) {
         const currentBalance = document.getElementById('new-balance');
         currentBalance.innerText = currentIncomeInput;
         // incomeInput.value = ''
-
+        errorMessage2.style.display = 'none';
+        errorMessage1.style.display = 'none';
+    } else {
+        errorMessage2.style.display = 'block';
+        errorMessage1.style.display = 'none';
     }
 });
 
@@ -42,16 +48,21 @@ document.getElementById('calc-btn').addEventListener('click', function () {
     const currentBalanceText = currentBalance.innerText;
 
     // update total expense
+    const errorMessage1 = document.getElementById('wrong-input1');
+    const errorMessage3 = document.getElementById('wrong-input3');
     const totalExpanseOutput = document.getElementById('total-expense');
     const newTotalExpense = rentInputAmount + foodInputAmount + othersInputAmount;
-    if (currentBalanceText > newTotalExpense) {
+    if (isNaN(newTotalExpense)) {
+        errorMessage1.style.display = 'block';
+    } else if (currentBalanceText > newTotalExpense) {
         const currentTotalExpense = parseFloat(totalExpanseOutput.innerText) + parseFloat(newTotalExpense);
         totalExpanseOutput.innerText = currentTotalExpense;
         // update balance
-
         const updatedNewBalance = parseFloat(currentBalanceText) - newTotalExpense;
-
         currentBalance.innerText = updatedNewBalance;
+        errorMessage3.style.display = 'none';
+    } else {
+        errorMessage3.style.display = 'block';
     }
 
 });
@@ -65,6 +76,8 @@ document.getElementById('saving-btn').addEventListener('click', function updateS
 
     const currentBalance = document.getElementById('new-balance');
     const currentBalanceText = currentBalance.innerText;
+
+    const errorMessage3 = document.getElementById('wrong-input3');
 
     // balance 
     const incomeInput = document.getElementById('income-input');
@@ -80,6 +93,9 @@ document.getElementById('saving-btn').addEventListener('click', function updateS
         const remainingBalanceOutput = document.getElementById('remaining-balance');
         const remainingBalance = parseFloat(currentBalanceText) - parseFloat(savingAmount);
         remainingBalanceOutput.innerText = remainingBalance;
+        errorMessage3.style.display = 'none';
+    } else {
+        errorMessage3.style.display = 'block';
     }
 
 });

@@ -39,9 +39,9 @@
                                 <h6 class="me-2">Income: </h6>
                                 <input id="income-input" class="me-3" type="text">
                             </div>
-                            <p id="wrong-input1" class="notify">Please enter an number
+                            <p id="wrong-input1" class="notify">Please enter a number
                             </p>
-                            <p id="wrong-input2" class="notify">Please enter an positive number
+                            <p id="wrong-input2" class="notify">Please enter a positive number
                             </p>
                         </div>
                         <!-- Expense section  -->
@@ -59,14 +59,17 @@
                                 <h6 class="me-2">Others: </h6>
                                 <input id="others-input" class="me-3" type="text">
                             </div>
-                            <p id="wrong-input1" class="notify">Please enter an number
-                            </p>
+
                         </div>
                         <div class="text-center">
                             <button id="calc-btn" type="button" class="btn btn-primary btn-sm px-5">Calculate</button>
                         </div>
 
                         <div class="text-center py-4">
+                            <p id="wrong-input1" class="notify">Please enter a number
+                            </p>
+                            <p id="wrong-input3" class="notify">Sorry, Not enough balance
+                            </p>
                             <h6>Total Expense: <span id="total-expense">00</span> </h6>
                             <h6>Balance: <span id="new-balance">00</span> </h6>
                         </div>
@@ -77,8 +80,6 @@
                             <h6> % </h6>
                             <button id="saving-btn" class="btn btn-primary btn-sm w-75 me-5">Save</button>
                         </div>
-                        <p id="wrong-input3" class="notify">Sorry, Not enough balance
-                        </p>
 
                         <div class="text-center py-4">
                             <h6>Saving Amount: <span id="saving-amount">00</span> </h6>
@@ -88,12 +89,12 @@
                 </div>
             </div>
         </div>
-
+        <!-- error message  -->
 
         <div class="error-message">
-            <p id="wrong-input1" class="notify">Please enter an number
+            <p id="wrong-input1" class="notify">Please enter a number
             </p>
-            <p id="wrong-input2" class="notify">Please enter an positive number
+            <p id="wrong-input2" class="notify">Please enter a positive number
             </p>
             <p id="wrong-input3" class="notify">Sorry, Not enough balance
             </p>
